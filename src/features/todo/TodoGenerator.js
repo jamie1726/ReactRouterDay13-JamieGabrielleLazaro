@@ -12,6 +12,7 @@ const TodoGenerator = () => {
 
     const onAdd = () => {
         dispatch(addTodo(todoText));
+        setTodoText("");
     };
     return (
     <div>

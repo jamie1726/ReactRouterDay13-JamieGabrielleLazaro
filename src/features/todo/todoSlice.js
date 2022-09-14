@@ -14,21 +14,28 @@ const initTodos = [
   ]
   
   const todoSlice = createSlice({
-    name: "todo",
+    name: "todo",  //name-used generate teh action, name-required for todo slice
     initialState: initTodos,
     reducers: {
       addTodo: (state, action) => {
         const todoText = action.payload;
-        console.log(action);
-        state.push({
+        const todo = {
           id: Date.now(),
           text: todoText,
           done: false,
-        });//state.push(todo);
+        }
+        state.push(todo);
       },
+      
+      //delete Todo
+      deleteTodo: (state, action) => {
+        const id = action.payload; //try to filter the items on this list, if the id is not equal to the id then we dotn return it to the list
+        return state.filter((todo) => todo.id !== id)//use filter  
+          //if not equal to id then we dont want it on the resutl array
+      }
     },
   });
   //todo/addTodo
 
-  export const {addTodo} = todoSlice.actions;
+  export const {addTodo,deleteTodo} = todoSlice.actions;
   export default todoSlice;

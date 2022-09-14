@@ -4,13 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { configureStore, createSlice } from '@reduxjs/toolkit';
 import store from './app/store';
-
-
-export const {addTodo} = todoSlice.actions;
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
