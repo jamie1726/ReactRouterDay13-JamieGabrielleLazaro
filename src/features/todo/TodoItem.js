@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import { deleteTodo } from "./todoSlice";
+import { deleteTodo, toggleTodo } from "./todoSlice";
+import "./TodoItem.css";
 
 const TodoItem = (props) => {
     const {todo} = props;
@@ -10,14 +11,18 @@ const TodoItem = (props) => {
         console.log("on delete");
         dispatch(deleteTodo(todo.id));
     }; //method
-    
-    return (
-        <div>
-            <span>{todo.text}</span>
+    const onToggle = () => {
+        console.log("on toggle");
+        //toggleTodo(id)
+        dispatch(toggleTodo(todo.id));
+    };
+    return ( //done - toggle/lined
+        <div onClick={onToggle}>
+            <span className={todo.done?"done":""}>{todo.text}</span>     
             <span onClick={onDelete}>&times;</span>
         </div>
     )
-    
+   
 }
 
 export default TodoItem;

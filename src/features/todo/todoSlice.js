@@ -32,10 +32,24 @@ const initTodos = [
         const id = action.payload; //try to filter the items on this list, if the id is not equal to the id then we dotn return it to the list
         return state.filter((todo) => todo.id !== id)//use filter  
           //if not equal to id then we dont want it on the resutl array
+      },
+
+      toggleTodo: (state, action) => {
+        const id = action.payload; 
+        return state.map(todo => 
+          todo.id === id ? {...todo, done: !todo.done} : todo   //if id is equal to id we rovided
+        );                  //^new object
+        //change the "todo"
+        // return state.map(todo => 
+        //   If (todo.id === id){
+        //   const updatedTogo = todo;
+        //   return updated Todo
+        // }
+        //   return todo;
       }
     },
   });
   //todo/addTodo
 
-  export const {addTodo,deleteTodo} = todoSlice.actions;
+  export const {addTodo,deleteTodo,toggleTodo} = todoSlice.actions;
   export default todoSlice;
