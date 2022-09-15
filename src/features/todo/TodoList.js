@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux/es/exports";
 import TodoGenerator from "./TodoGenerator";
 import TodoGroup from "./TodoGroup";
 import { getTodoList } from "../../api/todos";
+import { initData }  from "./todoSlice"
 
 const TodoList = () => {
     const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const TodoList = () => {
     console.log(todoList);
 
     // 1. useEffect when enter page
-    // 2. requset GET "/todos" to mock api
+    // 2. request GET "/todos" to mock api
     // 3. dispatch initData with response
     useEffect(() => {
         getTodoList().then((res) => {
@@ -20,7 +21,7 @@ const TodoList = () => {
     }, [dispatch])
 
 
-    return ( //SHOWSLIST ON tODOgROUP
+    return ( //ShowList ON TodoGroup
         <>
             <TodoGroup todoList={todoList}/> 
             <TodoGenerator/>

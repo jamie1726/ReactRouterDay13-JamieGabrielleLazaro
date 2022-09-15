@@ -1,21 +1,31 @@
 import React from "react";
-import {Link, Outlet} from 'react-router-dom';
+import {Link, Outlet} from "react-router-dom";
+import { Menu } from "antd";
+import {Footer, Header} from "antd/lib/layout/layout";
+import "./BasicLayout.css";
 
-function BasicLayout () {
+const BasicLayout = () => {
     return (
         <div>
+          <Header>Header</Header>
           <nav>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/help">Help</Link>
-            <Link to="/404">404</Link>
           </nav>
+          <Menu mode="horizontal" defaultSelectedKeys={["home"]}>
+            <Menu.Item key="home">Home<Link to="/"></Link></Menu.Item>
+            <Menu.Item key="about">About<Link to="/about"></Link></Menu.Item>
+            <Menu.Item key="help">Help<Link to="/help"></Link></Menu.Item>
+          </Menu>
           <div>
             <Outlet/>
           </div>
+          <Footer>This is the end of the List</Footer>
         </div>
     )
 }
+
 export default BasicLayout;
 
 

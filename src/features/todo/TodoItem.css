@@ -1,7 +1,7 @@
 span {
     width: 300px;
-    padding: 2.5px;
-    margin: 2.5px;
+    padding: 2px;
+    margin: 2px;
     display: inline-flex;
     justify-content: space-between;
 
@@ -14,3 +14,12 @@ span {
     border: 1px black solid;
     border-radius: 10px;
 }
+.site-button-ghost-wrapper {
+    padding: 1px 1px 1px;
+    background: rgb(190, 200, 200);
+
+  }
+/* p{
+    height: 1px;
+    width: 1px;
+} */

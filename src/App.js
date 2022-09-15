@@ -1,6 +1,6 @@
 import TodoList from './features/todo/TodoList';
 import './App.css';
-import {BrowserRouter, Routes, Route, Outlet, Link}  from "react-router-dom";
+import {BrowserRouter, Routes, Route}  from "react-router-dom";
 import NotFoundPage from './pages/NotFoundPage';
 import AboutPage from './pages/AboutPage';
 import HelpPage from './pages/HelpPage';
@@ -20,9 +20,9 @@ function App() {
         <Routes>
           <Route path="/" element={<BasicLayout/>}>
             <Route path="/" element={<TodoList/>}/>
-            <Route path="/about" element={<AboutPage/>}/>
-            <Route path="/help" element={<HelpPage/>}/>
-            <Route path="/*" element={<NotFoundPage/>}/>
+            <Route path="about" element={<AboutPage/>}/>
+            <Route path="help" element={<HelpPage/>}/>
+            <Route path="*" element={<NotFoundPage/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
