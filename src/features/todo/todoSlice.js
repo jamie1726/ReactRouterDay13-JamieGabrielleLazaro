@@ -20,7 +20,7 @@ const initTodos = [
       addTodo: (state, action) => {
         const todoText = action.payload;
         const todo = {
-          id: Date.now(),
+          id: Date.now(), //GETS THE DATE now
           text: todoText,
           done: false,
         }
@@ -30,7 +30,7 @@ const initTodos = [
       //delete Todo
       deleteTodo: (state, action) => {
         const id = action.payload; //try to filter the items on this list, if the id is not equal to the id then we dotn return it to the list
-        return state.filter((todo) => todo.id !== id)//use filter  
+        return state.filter((todo) => todo.id !== id)//use filter:  filter TODO.IDS NOT EQUAL TO THE INPUTTED ID 
           //if not equal to id then we dont want it on the resutl array
       },
 

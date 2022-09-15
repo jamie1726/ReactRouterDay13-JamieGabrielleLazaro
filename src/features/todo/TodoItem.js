@@ -16,7 +16,7 @@ const TodoItem = (props) => {
         //toggleTodo(id)
         dispatch(toggleTodo(todo.id));
     };
-    return ( //done - toggle/lined
+    return ( //done - toggle/lined  //X sign  //onClick X - it will call onDelete on odoSlice
         <div onClick={onToggle}>
             <span className={todo.done?"done":""}>{todo.text}</span>     
             <span onClick={onDelete}>&times;</span>

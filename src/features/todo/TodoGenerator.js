@@ -3,15 +3,15 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "./todoSlice";
 
 const TodoGenerator = () => {
-    const [todoText, setTodoText] = useState("");
+    const [todoText, setTodoText] = useState("");  //variableTodoText
     const dispatch = useDispatch();
 
     const onTodoTextChange = (event) => {
-        setTodoText(event.target.value);
+        setTodoText(event.target.value);  //will set the value of inputted or added list
     };
 
     const onAdd = () => {
-        dispatch(addTodo(todoText));
+        dispatch(addTodo(todoText)); //used dispatch to make the set TodoText have an initial value of null ""
         setTodoText("");
     };
     return (

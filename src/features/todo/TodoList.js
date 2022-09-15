@@ -6,9 +6,9 @@ const TodoList = () => {
     const todoList = useSelector((state) => state.todoList);
 
     console.log(todoList);
-    return (
+    return ( //SHOWSLIST ON tODOgROUP
         <>
-            <TodoGroup todoList={todoList}/>
+            <TodoGroup todoList={todoList}/> 
             <TodoGenerator/>
         </>
     );
