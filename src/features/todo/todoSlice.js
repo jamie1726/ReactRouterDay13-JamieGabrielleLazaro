@@ -17,6 +17,9 @@ const initTodos = [
     name: "todo",  //name-used generate teh action, name-required for todo slice
     initialState: initTodos,
     reducers: {
+      initData: (state, action) => {  //used for axios
+        return action.payload
+      },
       addTodo: (state, action) => {
         const todoText = action.payload;
         const todo = {
