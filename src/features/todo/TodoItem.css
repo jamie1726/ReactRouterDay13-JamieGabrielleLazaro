@@ -8,16 +8,17 @@ span {
 }
 .done {
     text-decoration: line-through;
+    color: red;
 }
 .holder {
     border: none;
     border: 1px black solid;
     border-radius: 10px;
+    background: #B5D9D9
 }
 .site-button-ghost-wrapper {
     padding: 1px 1px 1px;
     background: rgb(190, 200, 200);
-
   }
 /* p{
     height: 1px;

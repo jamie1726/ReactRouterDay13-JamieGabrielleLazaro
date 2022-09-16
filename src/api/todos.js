@@ -25,3 +25,7 @@ export function toggleTodoItem(id, done){
     return api.put(`/todos/${id}`, { "done": done });
 }
 
+//Update https://6322c3bb362b0d4e7dd2c36a.mockapi.io/api/$id
+export function editTodoItem(id, text){
+    return api.put("/todos/"+id, { text: text });
+}
